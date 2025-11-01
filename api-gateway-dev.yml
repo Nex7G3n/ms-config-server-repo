@@ -4,8 +4,8 @@ spring:
       server:
         webflux:
           routes[1]:
-            predicates[0]: Path=/clients/**
             id: clientes-microservice
+            predicates[0]: Path=/clients/**
             uri: https://d2e34aeab101.ngrok-free.app/
           routes[0]:
             id: autos-microservice
@@ -16,23 +16,13 @@ spring:
         enabled: 'false'
   application:
     name: api-gateway
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
-            client-secret: ${GOOGLE_CLIENT_SECRET}
-            client-id: ${GOOGLE_CLIENT_ID}
-            scope: openid,profile,email
-        provider:
-          google:
-            issuer-uri: https://accounts.google.com
+
 eureka:
   client:
     register-with-eureka: 'true'
+    fetch-registry: 'true'
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    fetch-registry: 'true'
+
 server:
   port: '8080'
