@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/clients_db?createDatabaseIfNotExist=true
-    username: root
-    password: Zero.14789
+    url: jdbc:mysql://avnadmin:AVNS_x9b1KUgY_kO8PSPWw4W@db-clients-db-clients.f.aivencloud.com:16972/defaultdb?ssl-mode=REQUIRED
+    username: avnadmin
+    password: AVNS_x9b1KUgY_kO8PSPWw4W
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     generate-ddl: true
