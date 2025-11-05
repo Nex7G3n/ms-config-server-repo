@@ -3,14 +3,11 @@ spring:
     gateway:
       server:
         webflux:
-          routes[1]:
-            id: clientes-microservice
-            predicates[0]: Path=/clients/**
-            uri: https://d2e34aeab101.ngrok-free.app/
-          routes[0]:
-            id: autos-microservice
-            predicates[0]: Path=/api/auto/**
-            uri: https://joellen-prebronze-undespondently.ngrok-free.dev/
+          routes:
+            - id: ms-cliente
+              uri: lb://CLIENTS
+              predicates:
+                - Path=/api/clients/**
     loadbalancer:
       ribbon:
         enabled: 'false'
