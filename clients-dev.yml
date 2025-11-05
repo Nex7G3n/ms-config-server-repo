@@ -19,3 +19,9 @@ logging:
   level:
     org:
       flywaydb: DEBUG
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: https://eureka-server.vardocs.app/
+    register-with-eureka: 'true'
