@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://pg-238b0340-ms-autoparts.h.aivencloud.com:22286/defaultdb?sslmode=require
+    url: jdbc:postgresql://avnadmin:AVNS_oei8lf3PxqAJE06o9PX@pg-238b0340-ms-autoparts.h.aivencloud.com:22286/defaultdb?sslmode=require
     username: avnadmin
     password: AVNS_oei8lf3PxqAJE06o9PX
     driver-class-name: org.postgresql.Driver
