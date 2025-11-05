@@ -23,5 +23,5 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: https://eureka-server.vardocs.app/
+      defaultZone: https://eureka-server.vardocs.app/eureka/
     register-with-eureka: 'true'
