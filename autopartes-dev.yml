@@ -5,13 +5,9 @@ spring:
     password: AVNS_oei8lf3PxqAJE06o9PX
     driver-class-name: org.postgresql.Driver
   jpa:
-    generate-ddl: true
     hibernate:
       ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
   flyway:
     enabled: false
   application:
