@@ -8,6 +8,10 @@ spring:
               uri: lb://CLIENTS
               predicates:
                 - Path=/api/clients/**
+            - id: ms-autopartes
+              uri: lb://AUTOPARTES
+              predicates:
+                - Path=/api/**
     loadbalancer:
       ribbon:
         enabled: 'false'
