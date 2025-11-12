@@ -1,13 +1,17 @@
 spring:
   datasource:
-    url: jdbc:postgresql://pg-238b0340-ms-autoparts.h.aivencloud.com:22286/defaultdb?sslmode=require
+    url: jdbc:mysql://avnadmin:AVNS_x9b1KUgY_kO8PSPWw4W@db-clients-db-clients.f.aivencloud.com:16972/defaultdb?ssl-mode=REQUIRED
     username: avnadmin
-    password: AVNS_oei8lf3PxqAJE06o9PX
-    driver-class-name: org.postgresql.Driver
+    password: AVNS_x9b1KUgY_kO8PSPWw4W
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    generate-ddl: true
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
   flyway:
     enabled: true
     locations: classpath:db/migration
