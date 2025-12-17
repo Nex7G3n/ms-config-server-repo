@@ -25,5 +25,5 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: https://eureka-server.vardocs.app/eureka/
+      defaultZone: https://ms-eureka-server.nxgen.dev/eureka/
     register-with-eureka: true
