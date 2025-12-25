@@ -7,6 +7,9 @@ eureka:
   instance: 
     hostname: ms-eureka-server.nxgen.dev 
     prefer-ip-address: false
+    home-page-url: https://ms-eureka-server.nxgen.dev/ 
+    status-page-url: https://ms-eureka-server.nxgen.dev/info 
+    health-check-url: https://ms-eureka-server.nxgen.dev/health
 spring:
   application:
     name: eureka-server
