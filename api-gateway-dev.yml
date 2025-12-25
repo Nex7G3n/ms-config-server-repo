@@ -1,20 +1,16 @@
 spring:
   cloud:
     gateway:
-      server:
-        webflux:
-          routes:
-            - id: ms-cliente
-              uri: lb://CLIENTS
-              predicates:
-                - Path=/api/clients/**
-            - id: ms-autopartes
-              uri: lb://AUTOPARTES
-              predicates:
-                - Path=/api/**
-    loadbalancer:
-      ribbon:
-        enabled: 'false'
+      # ELIMINADO: server.webflux
+      routes:
+        - id: ms-cliente
+          uri: lb://CLIENTS
+          predicates:
+            - Path=/api/clients/**
+        - id: ms-autopartes
+          uri: lb://AUTOPARTES
+          predicates:
+            - Path=/api/**
   application:
     name: api-gateway
 
@@ -22,7 +18,8 @@ eureka:
   client:
     service-url:
       defaultZone: https://ms-eureka-server.nxgen.dev/eureka/
-    register-with-eureka: 'true'
+    register-with-eureka: true
+    fetch-registry: true # Necesario para que el gateway encuentre los servicios
 
 server:
-  port: '8080'
+  port: 8080
