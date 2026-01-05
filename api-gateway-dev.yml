@@ -2,6 +2,20 @@ spring:
   cloud:
     gateway:
       # ELIMINADO: server.webflux
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - PATCH
+            allowed-headers: "*"
+            allow-credentials: false
+            max-age: 3600
       routes:
         - id: ms-cliente
           uri: lb://CLIENTS
