@@ -2,20 +2,22 @@ spring:
   cloud:
     gateway:
       # ELIMINADO: server.webflux
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
-        cors-configurations:
+        corsConfigurations:
           '[/**]':
-            allowed-origins: "*"
-            allowed-methods:
+            allowedOriginPatterns: "*"
+            allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
               - OPTIONS
               - PATCH
-            allowed-headers: "*"
-            allow-credentials: false
-            max-age: 3600
+            allowedHeaders: "*"
+            allowCredentials: false
+            maxAge: 3600
       routes:
         - id: ms-cliente
           uri: lb://CLIENTS
