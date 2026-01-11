@@ -20,5 +20,5 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: https://ms-eureka-server.nxgen.dev/eureka/
+      defaultZone: http://cc0cko8gscw08k8w0oocc000.46.62.225.65.sslip.io/eureka/
     register-with-eureka: true
