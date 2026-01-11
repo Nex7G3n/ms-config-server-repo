@@ -1,32 +1,33 @@
 spring:
   cloud:
     gateway:
-      # ELIMINADO: server.webflux
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOriginPatterns: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-              - PATCH
-            allowedHeaders: "*"
-            allowCredentials: false
-            maxAge: 3600
-      routes:
-        - id: ms-cliente
-          uri: lb://CLIENTS
-          predicates:
-            - Path=/api/clients/**
-        - id: ms-autopartes
-          uri: lb://AUTOPARTES
-          predicates:
-            - Path=/api/autopartes/**
+      server:
+        webflux:
+          default-filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOriginPatterns: "*"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                  - PATCH
+                allowedHeaders: "*"
+                allowCredentials: false
+                maxAge: 3600
+          routes:
+            - id: ms-cliente
+              uri: lb://CLIENTS
+              predicates:
+                - Path=/api/clients/**
+            - id: ms-autopartes
+              uri: lb://AUTOPARTES
+              predicates:
+                - Path=/api/autopartes/**
   application:
     name: api-gateway
 
