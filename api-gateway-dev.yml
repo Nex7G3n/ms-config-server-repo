@@ -24,7 +24,7 @@ spring:
           predicates:
             - Path=/api/clients/**
         - id: ms-autopartes
-          uri: lb://autopartes
+          uri: lb://AUTOPARTES
           predicates:
             - Path=/api/autopartes/**
   application:
