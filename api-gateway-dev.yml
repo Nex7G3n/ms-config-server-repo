@@ -7,7 +7,7 @@ spring:
           predicates:
             - Path=/api/clients/**
         - id: ms-autopartes
-          uri: lb://AUTOPARTES
+          uri: lb://autopartes
           predicates:
             - Path=/api/autopartes/**
       globalcors:
